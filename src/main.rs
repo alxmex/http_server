@@ -1,5 +1,11 @@
 
+mod server;
 use server::Server;
+
+mod http;
+use http::Method;
+use http::Request;
+
 
 fn main() {
 
@@ -9,43 +15,6 @@ fn main() {
 }
 
 
-mod server{
-    pub struct Server {
-        addr: String,
-    }
-    impl Server{
-        pub fn new(addr: String) -> Self {
-            Self { addr }
-        }
-
-        pub fn run(self){
-            println!("Server is listening on {}.", self.addr);
-        }
-
-    }
-}
-
-mod http{
-    mod request {
-        struct Request {
-            path: String, 
-            query_string: Option<String>,
-            method: super::method::Method,
-        }
-}
 
 
-mod method{
-    pub enum Method{
-        GET,
-        POST,
-        PUT,
-        DELETE,
-        CONNECT,
-        OPTIONS,
-        TRACE,
-        PATCH,
-        HEAD,
-    }
-}
-}
+
