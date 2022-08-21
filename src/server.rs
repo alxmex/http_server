@@ -1,12 +1,11 @@
+use crate::http::Request;
+use std::convert::TryFrom;
 use std::net::TcpListener;
 use std::io::Read;
 pub struct Server {
         addr: String,
     }
     
-
-
-
 impl Server{
     pub fn new(addr: String) -> Self {
         Self { addr }
